@@ -2,6 +2,7 @@ import AntlerGPT from "@/components/AntlerGPT"
 import Banner from "@/components/Banner"
 import { GithubLogo } from "@phosphor-icons/react/dist/ssr/index"
 import { Container, Heading, Flex, Section, Text, Button, IconButton } from "@radix-ui/themes"
+import Image from "next/image"
 
 export default function Home() {
   return (
@@ -9,7 +10,11 @@ export default function Home() {
       <Banner />
       <Container size="4">
         <Flex direction={"column"} gap="8" align={"center"}>
-        <Heading size="8">AntlerGPT</Heading>
+        <Flex direction="row" gap="2">
+            <Image height={50} width={50} alt="Antler logo" src="/antlerlogo.png" />
+            <Heading size="8">AntlerGPT</Heading>
+        </Flex>
+       
         <AntlerGPT />
         </Flex>
         
