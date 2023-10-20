@@ -1,0 +1,32 @@
+/* Define @keyframes animation for pendulum rotation */
+@keyframes pendulumRotate {
+  0% {
+    transform: rotate(-10deg);
+  }
+  25% {
+    transform: rotate(0deg); /* Rotate clockwise by 15 degrees */
+  }
+  50% {
+    transform: rotate(10deg); /* Rotate clockwise by 15 degrees */
+  }
+  75% {
+    transform: rotate(0deg); /* Rotate clockwise by 15 degrees */
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+/* Define other styles */
+.image-container {
+  overflow: hidden;
+}
+
+.oscillating-image {
+  animation: pendulumRotate 2s ease-in-out infinite; /* Adjust duration and easing as needed */
+  display: block;
+  margin: 0 auto;
+}
+
+.oscillate {
+  animation-play-state: running;
+}
