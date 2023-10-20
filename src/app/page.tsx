@@ -10,8 +10,8 @@ export default function Home() {
       <Banner />
       <Container size="4">
         <Flex direction={"column"} gap="8" align={"center"}>
-        <Flex direction="row" gap="2">
-            <Image height={50} width={50} alt="Antler logo" src="/antlerlogo.png" />
+        <Flex direction="row" gap="2" align="center">
+            <Image height={40} width={40} alt="Antler logo" src="/antlerlogo.png" />
             <Heading size="8">AntlerGPT</Heading>
         </Flex>
        
