@@ -41,7 +41,7 @@ const AntlerGPT = () => {
         {Object.keys(PartnerPrompts).map((partner: string, index: number) => <SelectItem key={index} value={partner}>{partner}</SelectItem>)}
     </SelectContent>
   </SelectRoot>
-  <TextArea size="3" color="red" maxLength={500} placeholder="Whats your wedge?" value={question} onChange={(e) => setQuestion(e.currentTarget.value)} rows={4} />
+  <TextArea size="3" color="red" maxLength={500} placeholder="Whats your idea?" value={question} onChange={(e) => setQuestion(e.currentTarget.value)} rows={4} />
   <Button color="red" disabled={!question} size="3" onClick={() => completePartnerThoughts(question)}>
   <Sparkle size={16} weight="fill" /> Pitch
 </Button>
