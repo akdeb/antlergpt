@@ -7,13 +7,7 @@ import { SelectContent, SelectItem, SelectRoot, SelectTrigger,  } from "./Radix"
 import Image from "next/image";
 import { Sparkle } from "@phosphor-icons/react/dist/ssr/index";
 import { useCompletion } from "ai/react";
-
-export type Partner = "Tyler" | "Prerna" | "Sam";
-export const PartnerPrompts: {name: Partner, prompt: string}[] = [
-    {name: "Tyler", prompt: ""},
-    {name: "Prerna", prompt: ""},
-    {name: "Sam", prompt: ""},
-];
+import { Partner, PartnerPrompts } from "@/lib/constants";
 
 const AntlerGPT = () => {
     const [ partner, setPartner ]  = useState<Partner>("Tyler");
@@ -34,11 +28,11 @@ const AntlerGPT = () => {
 
     const [ question, setQuestion ] = useState<string>("");
 
-    return <Grid columns={{ "sm": "1", "md": "2"}} gap="8" width="100%">
+    return <Grid columns={{ "sm": "1", "md": "2"}} width="100%">
             <Flex>
                 <Image width={300} height={400} src={`/${_.toLower(partner)}.png`} alt={partner} />
             </Flex>
-            <Flex direction="column" gap="3">
+            <Flex direction="column" gap="3" style={{ maxWidth: 300 }}>
             <SelectRoot size="3" defaultValue="Tyler" onValueChange={(value: Partner) => setPartner(value)}>
     <SelectTrigger color="red" />
     <SelectContent color="red">

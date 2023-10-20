@@ -1,5 +1,6 @@
 import OpenAI from 'openai';
 import { OpenAIStream, StreamingTextResponse } from 'ai';
+import { PartnerPrompts } from '@/lib/constants';
  
 export const runtime = 'edge';
  
@@ -10,8 +11,6 @@ const openai = new OpenAI({
 export async function POST(req: Request) {
   // Extract the `prompt` from the body of the request
   const { prompt, partner } = await req.json();
-
-  console.log(partner);
  
   // Request the OpenAI API for the response based on the prompt
   const response = await openai.chat.completions.create({
@@ -21,7 +20,7 @@ export async function POST(req: Request) {
     messages: [
       {
         role: 'user',
-        content: `A VC Tyler is a bit of a jock and always talks about Talking to your customers, finding your sandbox (things you are good at) and finding your wedge (your different ideas). Reply to my question below like Tyler in less than 100 words. Make it sound more like a bro and a jock. Use words like bro and dude, like a frat-bro would. Idea: ${prompt}`,
+        content: `Your goal is to evaluate startup ideas in the persona of a VC named ${partner} in less than 100 words. ${PartnerPrompts[partner]}. The idea is: ${prompt}. Evaluate it:`,
       },
     ],
     max_tokens: 200,
