@@ -18,6 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+        <meta property="og:image" content="/tyler.png" />
+        <meta property="og:image:width" content="400" />
+        <meta property="og:image:height" content="300" />
       <body className={inter.className}><Theme appearance="light" accentColor="red" panelBackground="solid" radius="small">{children}</Theme></body>
     </html>
   )
